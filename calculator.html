@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KnockoutJS</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <p>Calculator from KnockoutJS</p>
+        <h3 data-bind="text: commandline"></h3>
+        <div data-bind="foreach: numbers" class="numbers">
+            <button data-bind="value: val, text: val, click: $parent.addNumber"></button>
+        </div>
+        <div data-bind="foreach: commands" class="commands">
+            <button data-bind="value: command, text: command, click: $parent.addCommand, disable: $parent.hasNumbers"></button>
+        </div>
+        <button class="btn-result" data-bind="click: doCalculate"> =</button>
+    </div>
+    <script src="js/knockout-3.4.2.js" type="text/javascript"></script>
+    <script src="js/calculator.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/calculator.css">
+</body>
+
+</html>

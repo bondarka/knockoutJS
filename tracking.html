@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking</title>
+</head>
+<body>
+<h2>In your class <span data-bind="text: students().length"></span> student(s)</h2>
+<button data-bind="click: addStudent, enable: students().length < 20">Add new students</button>
+<table>
+    <thead><tr>
+        <th>Students name</th>
+    </tr></thead>
+    <tbody data-bind="foreach: students">
+    <tr>
+        <td><input data-bind="value: name" /></td>
+        <td><a href="#" data-bind="click: $root.removeStudent">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<script src="js/knockout-3.4.2.js" type="text/javascript"></script>
+<script src="js/tracking.js"></script>
+</body>
+</html>
+
+

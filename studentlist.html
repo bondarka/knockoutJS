@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student list</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>FULL NAME</th>
+                <th>GENDER</th>
+                <th>AGE</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: filtereStudent">
+        <tr>
+            <td data-bind="text: fullName"></td>
+            <td data-bind="text: gender"></td>
+            <td data-bind="text: age"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div data-bind="foreach: buttonfilter">
+        <input type="button" data-bind="click: $parent.setActiveFilter, value: title"/>
+    </div>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/studentlist.js"></script>
+</body>
+</html>
